@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/static/logo.png" type="image/x-icon">
+  <title>ATRT</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Bree Serif', serif;
+    }
+
+
+    body {
+      background-image: url(https://c4.wallpaperflare.com/wallpaper/67/527/747/blue-neuronal-synapses-wallpaper-preview.jpg);
+
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100%;
+      background-position: center;
+    }
+
+    h1 {
+      color: aliceblue;
+      text-align: center;
+      font-size: 2rem;
+      padding: 10px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 60%;
+      max-width: 90%;
+      padding: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      /* background-color: rgba(255, 255, 255, 0.9); */
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 100%;
+      margin-bottom: 30px;
+      margin-left: 70%;
+      max-width: 100%;
+      transition: transform 0.3s, box-shadow 0.3s;
+
+      /* height: 250px; */
+      /* width: 250px; */
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.132);
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .circle-image {
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+
+    .card.right .circle-image {
+      margin-right: 0;
+      margin-left: 20px;
+    }
+
+    .text-content {
+      flex-grow: 1;
+    }
+
+    .text-content h2 {
+      margin: 0;
+      margin-bottom: 10px;
+      color: aliceblue;
+      transition: color 0.3s;
+
+    }
+
+    .precautions-list {
+      padding-left: 20px;
+      color: aliceblue;
+      /* Adjust as needed */
+    }
+
+    .text-content p {
+      margin: 0;
+      color: aliceblue;
+      transition: color 0.3s;
+
+    }
+  </style>
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  <h1>About Us</h1>
+  <div class="container">
+    <div class="card left">
+      <img src="{{ url_for('static', filename='tumor.jpg') }}" alt="Cat image" class="circle-image" />
+      <div class="text-content">
+        <h2>With Tumor</h2>
+        <p>Atypical teratoid/rhabdoid tumor (AT/RT) is a rare, aggressive brain tumor most commonly affecting young
+          children. It originates from the central nervous system and is characterized by fast growth and resistance to
+          treatment. AT/RT often presents with symptoms like headaches, nausea, and neurological deficits due to
+          increased intracranial pressure. Treatment typically involves a combination of surgery, chemotherapy, and
+          radiation, but prognosis remains poor, with survival rates significantly lower than other pediatric brain
+          tumors.</p>
+      </div>
+    </div>
+    <div class="card right">
+      <div class="text-content">
+        <h2>Without Tumor</h2>
+        <p>The brain, a complex organ, controls thoughts, emotions, and bodily functions. Without an atypical teratoid
+          rhabdoid tumor (ATRT), a rare, aggressive cancer primarily in children, the brain can function optimally. ATRT
+          originates in the brain or spinal cord, causing neurological symptoms like headaches, nausea, and motor skill
+          impairments. Absence of ATRT means normal brain development, cognitive abilities, and reduced neurological
+          health risks. Regular check-ups and healthy lifestyle choices support brain health.</p>
+      </div>
+      <img src="{{ url_for('static', filename='pred0.jpg') }}" alt="Cat image" class="circle-image" />
+    </div>
+    <div class="card left">
+      <img src="{{ url_for('static', filename='pred22.jpg') }}" alt="Cat image" class="circle-image" />
+      <div class="text-content">
+        <h2>How Tumor Forms</h2>
+        <p>Atypical teratoid rhabdoid tumors (ATRT) are rare, aggressive brain and spinal cord tumors primarily
+          affecting children aged between 3-6 years. They originate from cells with genetic mutations, notably in the
+          SMARCB1 (INI1) gene, which is crucial for cell regulation and tumor suppression. When this gene mutates or is
+          deleted, cells grow uncontrollably, forming tumors. ATRTs can develop in various brain regions and are
+          characterized by rapid growth and a high potential for metastasis, making early detection and treatment
+          critical.</p>
+        <h2>The signs and symptoms of AT/RT</h2>
+        <ul class="precautions-list">
+          <li>morning headache or headache that goes away after vomiting.</li>
+          <li>nausea and vomiting.</li>
+          <li>unusual sleepiness or change in activity level.</li>
+          <li>loss of balance, lack of coordination, or trouble walking.</li>
+          <li>increase in head size (in infants)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card right">
+      <div class="text-content">
+        <h2>Precautions for ATRT Tumor</h2>
+        <ul class="precautions-list">
+          <li>
+            <b>Regular medical follow-ups:</b> Monitor tumor growth and health status.
+          </li>
+          <li>
+            <b>Consult with specialists:</b> Neurologist, oncologist, for comprehensive treatment plans.
+          </li>
+          <li>
+            <b>Adhere to treatment protocols:</b> Surgery, chemotherapy, radiation as prescribed.
+          </li>
+          <li>
+            <b>Maintain healthy lifestyle:</b> Nutrition, exercise, sleep to support recovery.
+          </li>
+          <li>
+            <b>Monitor for symptoms:</b> Seizures, headaches, changes in behavior or coordination.
+          </li>
+        </ul>
+      </div>
+      <img src="{{ url_for('static', filename='Brain-tumours.jpg') }}" alt="Cat image" class="circle-image" />
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+</body>
+
+</html>

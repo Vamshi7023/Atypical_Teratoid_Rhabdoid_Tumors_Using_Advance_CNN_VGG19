@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/logo.png" type="image/x-icon">
+    <title>Scan Image</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Bree Serif', serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(https://c4.wallpaperflare.com/wallpaper/67/527/747/blue-neuronal-synapses-wallpaper-preview.jpg);
+
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            background-position: center;
+        }
+
+        h1 {
+            color: rgb(246, 241, 241);
+            text-align: center;
+            font-size: 2rem;
+            padding: 10px;
+        }
+
+        form {
+            color: white;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            max-width: 500px;
+            padding: 20px;
+            height: 530px;
+            width: 500px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.132);
+            backdrop-filter: blur(10px);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 35px;
+            text-align: center;
+        }
+
+        input[type=file] {
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            display: block;
+            margin: auto;
+        }
+
+        button[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            margin-top: 20px;
+            display: block;
+            margin: 25px auto;
+        }
+
+        #preview {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 40%;
+        }
+
+        .result-container {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <h1>A GENERALIZED DEEP LEARNING FRAMEWORK FOR CLASSIFICATION OF VARIOUS BRAIN DISORDERS</h1>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <label>Choose An MRI Brain Image:</label>
+        <input type="file" name="file" id="fileInput">
+        <img id="preview" src="#" alt="Image Preview" style="display:none;">
+        <button type="submit" value="Predict" id="submitButton" style="display:none;">Predict</button>
+
+    </form>
+
+
+    {% include 'footer.html' %}
+
+    <script>
+        document.getElementById('fileInput').onchange = function (event) {
+            var preview = document.getElementById('preview');
+            var submitButton = document.getElementById('submitButton');
+            var file = event.target.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                submitButton.style.display = 'block';
+            }
+
+            reader.readAsDataURL(file);
+        };
+    </script>
+</body>
+
+</html>

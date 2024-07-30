@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="icon" href="/static/logo.png" type="image/x-icon">
+    <title>ATRT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Bree Serif', serif;
+
+
+        }
+
+        body {
+            background-image: url(https://c4.wallpaperflare.com/wallpaper/67/527/747/blue-neuronal-synapses-wallpaper-preview.jpg);
+
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            background-position: center;
+        }
+
+        h1 {
+            color: aliceblue;
+            text-align: center;
+            font-size: 2rem;
+            padding: 10px;
+        }
+
+        .container {
+            /* background-color: rgba(255, 255, 255, 0.9); */
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 70%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 50px;
+            margin-left: 15%;
+
+            /* height: 250px; */
+            /* width: 250px; */
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.132);
+            backdrop-filter: blur(10px);
+        }
+
+        .image-container {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .content-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .title {
+            color: aliceblue;
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .main-title {
+            color: aliceblue;
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        .description,
+        .about {
+            color: aliceblue;
+            line-height: 1.6;
+        }
+
+        .about a {
+            color: red;
+            text-decoration: none;
+        }
+
+        .about a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <h1>Contact Us</h1>
+    <div class="container">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='pred0.jpg') }}" alt="Technical Stack Image">
+
+        </div>
+        <div class="content-container">
+            <h2 class="title">Comprehensive</h2>
+            <h1 class="main-title">Technical Stack</h1>
+            <p class="description">
+                Leveraging OpenCV and PIL for image processing, TensorFlow and Keras for machine learning,
+                and NumPy with Pathlib for seamless data manipulation, this system ensures efficient handling
+                of medical images and datasets. The core architecture, based on Convolutional Neural Networks (CNNs),
+                captures intricate patterns in medical images. Optimized using the Adam optimizer and monitored via
+                TensorBoard,
+                our system delivers precise, timely, and potentially life-saving results for medical professionals and
+                patients.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-container">
+            <h2 style="color: aliceblue;">About This Project</h2>
+            <p class="about">
+                we, <a href="https://github.com/Prajwal08a" target="_blank">A.Prajwal Sri Tej</a>,
+                <a href="https://github.com/Hemanth094" target="_blank">A.V.S Hemanth Kumar</a>,
+                <a href="https://github.com/Vamshi7023" target="_blank">T.K Vamshi Krishna</a>
+                independently created this Miniproject for the third semester of my Computer Science Engineering
+                program. I developed a brain tumor detection system using
+                my expertise in image processing and machine learning. Through this project, our goal was to devise a
+                practical and
+                efficient solution for early tumor diagnosis, demonstrating my enthusiasm for technology and healthcare.
+            </p>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

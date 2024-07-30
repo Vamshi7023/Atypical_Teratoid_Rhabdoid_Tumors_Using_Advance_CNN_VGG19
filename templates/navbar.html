@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/static/logo.png" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Bree Serif', serif;
+
+    }
+
+    nav {
+      display: flex;
+      padding: 2% 6%;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      z-index: 1000;
+ }
+
+    nav img {
+      width: 150px;
+      /* filter: invert(100%); */
+    }
+
+    nav img:hover {
+      cursor: pointer;
+    }
+
+    .nav-links {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 17px;
+    }
+
+    .nav-links ul li {
+      list-style: none;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+    }
+
+    .nav-links ul li a {
+      text-decoration: none;
+      color: aliceblue;
+      font-size: 1.3rem;
+    }
+
+    .nav-links ul li a:hover {
+      text-decoration: underline;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="header">
+    <nav>
+      <a><img src="static\logo.png"  alt="Logo"></a>
+
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+
+        <ul>
+          <!-- Update your navigation in your main template -->
+          <li>
+            <a href="{{ url_for('home') }}">Home</a>
+          </li>
+          <li>
+            <a href="{{ url_for('scan') }}">Scan</a>
+          </li>
+          <li>
+            <a href="{{ url_for('about') }}">About</a>
+          </li>
+          <li>
+            <a href="{{ url_for('contact') }}">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+  </section>
+
+
+
+</body>
+
+</html>
